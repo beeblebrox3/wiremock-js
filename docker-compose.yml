@@ -1,0 +1,16 @@
+version: "3"
+services:
+  server:
+    build:
+      context: ./docker
+    container_name: "wiremock-server"
+    ports:
+      - "8080:80"
+    volumes:
+      - "./resources:/app"
+  builder:
+    image: "node:8-alpine"
+    container_name: "builder"
+    volumes:
+      - "./:/usr/src/app"
+    command: "node /usr/src/app/index.js"

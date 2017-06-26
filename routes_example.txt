@@ -1,0 +1,44 @@
+module.exports [{
+    name: "users",
+    request: {
+        path: "/users",
+        method: "get",
+        headers: {
+            "Accepts": "application/json"
+        },
+        queryString: {
+            "s": "Wire",
+            "q": {
+                matches: "(.+)xx"
+            }
+        },
+        "cookies": {
+            "xpto": "foo",
+            "foo": {
+                "matches": "xxx"
+            }
+        },
+        "jsonBody": {
+            foo: "bar"
+        },
+        "rawBody": "xxx",
+        ignoreArrayOrder: false,
+        ignoreExtraElements: false,
+        auth: ["user", "password"],
+        auth: {
+            "username": "luis",
+            password: "pass"
+        },
+    },
+    response {
+        status: 200,
+        headers: {
+            "foo": "bar"
+        },
+        cookies: {
+            "foo": "bar"
+        },
+        jsonBody: {},
+        body: ""
+    }
+}]
