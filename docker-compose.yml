@@ -5,7 +5,8 @@ services:
       context: ./docker
     container_name: "wiremock-server"
     ports:
-      - "8080:80"
+      - 80
+      - 443
     volumes:
       - "./resources:/app"
   builder:

@@ -6,4 +6,4 @@ RUN bash -c "pwd ; ls -la"
 RUN chmod 777 /wiremock.jar
 EXPOSE 80
 
-CMD java -jar /wiremock.jar --port 80 --root-dir "/app"
+CMD java -jar /wiremock.jar --port 80 --https-port 443 --root-dir "/app"
